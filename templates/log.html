@@ -1,0 +1,25 @@
+<!--在test.html文件夹下添加-->
+{% extends "base.html" %}
+{% block content %}
+<html>
+    <head>
+        <title>Just test template</title>
+        <style>
+            body {
+               background-color: red;
+            }
+            em {
+                color: LightSeaGreen;
+            }
+        </style>
+    </head>
+    <body>
+<form action="/your-name/" method="post">
+    <label for="your_name">Your name: </label>
+    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+    <input type="submit" value="OK">
+</form>
+        <strong>{{ current_time }}</strong>
+    </body>
+</html>
+{% endblock %}
