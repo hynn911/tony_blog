@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>学生数据如下:</p>
+    <table border="10">
+        {% for publisher in object_list %}
+            <tr >
+                <td>{{publisher.msisdn_no}}</td>
+                <td>{{publisher.hss}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

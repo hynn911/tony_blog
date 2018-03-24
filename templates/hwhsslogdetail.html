@@ -1,0 +1,35 @@
+#post.html
+{% extends "base.html" %}
+
+{% block content %}
+<div class="posts">
+<center>用户信息表</center>
+		<table border=1px>
+        <tr>
+			<th>操作员</th>
+			<th>开始时间</th>
+			<th>MSISDN_NO</th>
+			<th>IMSI_NO</th>
+			<th>命令目的</th>
+			<th>MML_COMMAND</th>
+			<th>ERRORCODE</th>
+			<th>ERROR_REASON</th>
+        </tr>
+
+		{% for u in post_list %}
+        <tr>
+
+        	<td>{{u.OPERATOR_NAME}}</td>
+			<td>{{u.STARTTIME}}</td>
+			<td>{{u.MSISDN_NO}}</td>
+			<td>{{u.IMSI_NO}}</td>
+			<td>{{u.cmdparse}}</td>
+			<td>{{u.MML_COMMAND}}</td>
+			<td>{{u.ERRORCODE}}</td>
+			<td>{{u.ERROR_REASON}}</td>
+		{% endfor %}
+		</tr>
+
+        </table>
+</div><!-- /.blog-post -->
+{% endblock %}

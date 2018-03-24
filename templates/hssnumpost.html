@@ -1,0 +1,16 @@
+#post.html
+{% extends "base.html" %}
+
+{% block content %}
+<div class="posts">
+        <section class="post">
+            <header class="post-header">
+                <h2 class="post-title">{{ post.msisdn_no }} 归属HSS</h2>
+
+                    <p class="post-meta">
+                        MSISDN:  <a class="post-author" href="#">{{ post.msisdn_no}}</a> IMSI:  <a class="post-author" href="#">{{ post.imsi_no}}</a>  HSS:<a class="post-category post-category-js" href="#">{{ post.hss }}</a>
+                    </p>
+            </header>
+        </section>
+</div><!-- /.blog-post -->
+{% endblock %}

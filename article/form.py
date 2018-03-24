@@ -12,3 +12,9 @@ class ContactForm(forms.Form):
 class HLRForm(forms.Form):
     Usernum = forms.CharField(max_length=100)
     isImsi = forms.BooleanField(required=False)
+
+class LogForm(forms.Form):
+    Usernum = forms.CharField(max_length=100)
+    # isImsi = forms.BooleanField(required=False)
+    BegMounth = forms.CharField(max_length=100)
+    EndMounth = forms.CharField(max_length=100)

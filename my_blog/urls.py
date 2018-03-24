@@ -16,15 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url,re_path
-from article.views import home,detail,test,log,get_name,your_name,getnum
+from article.views import home,detail,test,log,your_name,get_hlr,HssNumListView,hssdestdetail,get_log
+from article.models import HSS_NUM
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', home, name='home'),
     re_path(r'^test/$', test),
-    re_path(r'^log/$', log),
-    re_path(r'^your-name/$', your_name),
-    re_path(r'^get_hlr/$', get_name),
+    re_path(r'^log/$', log, name='log'),
+    re_path(r'^your-name/$', your_name, name='your_name'),
+    re_path(r'^get_hlr/$', get_hlr, name='get_hlr'),
+    re_path(r'^get_log/$', get_log, name='get_log'),
     re_path(r'^(?P<id>\d+)/$', detail, name='detail'),
-    re_path(r'^getnum/(?P<num>\d+)/$', getnum, name='getnum'),
+    re_path(r'^numdetail/$', HssNumListView.as_view(), name='hssnum-list'),
+    path('getnum/<int:msisdn_no>/', hssdestdetail, name='hssdestdetail'),
 ]

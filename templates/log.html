@@ -6,7 +6,7 @@
         <title>Just test template</title>
         <style>
             body {
-               background-color: red;
+               background-color: grey;
             }
             em {
                 color: LightSeaGreen;
@@ -14,10 +14,10 @@
         </style>
     </head>
     <body>
-<form action="/your-name/" method="post">
-    <label for="your_name">Your name: </label>
-    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-    <input type="submit" value="OK">
+<form action="/get_log/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
 </form>
         <strong>{{ current_time }}</strong>
     </body>
